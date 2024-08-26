@@ -38,8 +38,8 @@ func GetFlavours(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var flavourNames []string
-	for i, details := range *flavours {
-		flavourNames[i] = details.Name
+	for _, details := range *flavours {
+		flavourNames = append(flavourNames, details.Name)
 	}
 
 	response := api.IceCreamResponse{
