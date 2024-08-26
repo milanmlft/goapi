@@ -32,7 +32,7 @@ func Authorisation(next http.Handler) http.Handler {
 			return
 		}
 
-		var loginDetails *tools.loginDetails
+		var loginDetails *tools.LoginDetails
 		loginDetails = (*database).GetUserLoginDetails(username)
 
 		if loginDetails == nil || (token != (*loginDetails).AuthToken) {
